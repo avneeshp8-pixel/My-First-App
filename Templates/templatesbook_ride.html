@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Book a Ride</h2>
+  <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>{{ form.pickup.label }} {{ form.pickup(size=40) }}</p>
+      <p>{{ form.drop.label }} {{ form.drop(size=40) }}</p>
+      <p>{{ form.submit(class="btn") }}</p>
+  </form>
+{% endblock %}

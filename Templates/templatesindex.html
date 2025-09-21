@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Welcome to Taxi App</h2>
+  {% if current_user.is_authenticated %}
+      {% if not current_user.is_driver %}
+          <p>You can book a taxi now.</p>
+          <a class="btn" href="{{ url_for('book') }}">Book a Ride</a>
+      {% else %}
+          <p>You are registered as a Driver.</p>
+      {% endif %}
+  {% else %}
+      <p>Please <a href="{{ url_for('login') }}">login</a> or <a href="{{ url_for('register') }}">register</a>.</p>
+  {% endif %}
+{% endblock %}
