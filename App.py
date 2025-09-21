@@ -95,6 +95,10 @@ def status(ride_id):
     fare = city_fares.get((ride.pickup, ride.drop), 1200)
     return render_template("ride_status.html", ride=ride, fare=fare)
 
+# Deployment command for Gunicorn:
+# gunicorn app:app
+# (Pehla 'app' = Python file name without .py, Dusra 'app' = Flask app object)
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
