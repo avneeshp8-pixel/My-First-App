@@ -12,7 +12,7 @@ class Config:
 from models import db, User, Ride
 from forms import RegisterForm, LoginForm, RideForm
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+app = Flask(__name__)
 app.config.from_object(Config)
 
 db.init_app(app)
